@@ -1,0 +1,66 @@
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="tax.css">
+    <script type="text/javascript" src="tax.js"></script>
+</head>
+<body>
+<div id="header">
+    <div class="slideshow">
+      <div class="slideshow-image"></div>
+      <div class="slideshow-image"></div>
+      <div class="slideshow-image"></div>
+      <div class="slideshow-image"></div>
+    </div>
+    <div id="h1Wrap">
+      <h1>Income Tax Calculator</h1>
+    </div>
+  </div>
+  <div id="content">
+    <div id="container">
+      <div class="card">
+        <!-- Income Tax Form -->
+        <form name="incomeTaxForm" autocomplete="off">
+        <div class="form-group" >
+          <label class="GrossAnnualIncom">Enter gross annual incom</label><a href="#" data-toggle="tooltip" data-placement="top" title="Gross annual income is your total salary in a year befour any dudections!"><span>     </span>?</a>
+          <input id="grossannualincome" type="float" class="form-control" step="0.01" name="grossannualincome" min="0" placeholder="Enter Gross Annual Income">
+        </div>
+        <div class="form-group">  
+          <label class="ExtraIncom">Enter extra incom</label><a href="#" data-toggle="tooltip" data-placement="top" title="Other sources of income amount"><span>     </span>?</a>
+          <input id="extraincome" type="float" class="form-control" step="0.01" name="extraincome" min="0" placeholder="Enter Extra Incom">
+         </div>
+         <div class="form-group">
+          <label class="AgeGroup">Enter age group</label><a href="#" data-toggle="tooltip" data-placement="top" title="your age"><span>     </span>?</a>
+          <input id="age" type="number" class="form-control" name="age" placeholder="Enter Age Group">
+        </div> 
+        <div class="form-group">
+          <label class="AgeGroup">Enter total applicable deductions</label><a href="#" data-toggle="tooltip" data-placement="top" title="Deuctions in your salary"><span>     </span>?</a>
+          <input id="totalappded" class="form-control" type="float" step="0.01" name="totalappded" min="0" placeholder="Enter Total Applicable Deductions">
+        </div> 
+          <a href="#modal" id="taxbtn" class="btn btnBig" onclick="calcIncomeTax()">Submit</a>
+        </form>
+        <!-- Income Tax Form -->
+      </div>
+    </div>
+    <!-- Modal -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modalDialog">
+      <div class="modalBody">
+         <a href="#" class="btnClose" aria-hidden="true">×</a>
+         
+        <p id="pop"><h2>Your Overall Incom will Be</h2>
+            <br>
+            <span id="total"></span> 
+            <span id="tax"></span>
+            <br>
+            After Tax Deduction</p>
+      </div>
+      <div class="modalFooter">
+        <a href="#" class="btn">Close</a>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  </div>
+  </body>
